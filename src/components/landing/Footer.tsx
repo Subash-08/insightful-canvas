@@ -82,7 +82,7 @@ export const Footer = () => (
           as="h2"
           mode="letter"
           stagger={0.04}
-          className="font-display font-black text-[12vw] leading-[0.9] tracking-tighter text-background block text-center"
+          className="font-display font-black text-[10vw] leading-[0.9] tracking-tighter text-background block text-center"
         />
       </div>
 
