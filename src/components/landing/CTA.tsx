@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { AnimatedText } from "@/components/anim/AnimatedText";
 
 export const CTA = () => (
-  <section className="relative py-32 px-6 bg-background">
+  <section className="relative py-24 px-6 bg-background">
     <motion.div
       initial={{ opacity: 0, scale: 0.94, y: 40 }}
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -18,9 +18,9 @@ export const CTA = () => (
       />
       <div className="relative">
         <AnimatedText
-          text="Ready to see it all?"
+          text="Ready to trust your data?"
           as="h2"
-          className="font-display font-bold text-5xl md:text-7xl text-foreground"
+          className="font-display font-bold text-4xl md:text-6xl text-foreground"
         />
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -29,7 +29,7 @@ export const CTA = () => (
           transition={{ delay: 0.6, duration: 0.7 }}
           className="mt-6 text-lg text-foreground/80 max-w-xl mx-auto"
         >
-          14 days free. No credit card required. Cancel any time, but you won't want to.
+          Get a free analytics audit and discover exactly where your data is leaking — and how to fix it.
         </motion.p>
         <motion.button
           whileHover={{ scale: 1.06 }}
@@ -40,7 +40,7 @@ export const CTA = () => (
           transition={{ delay: 0.9, duration: 0.6 }}
           className="mt-10 px-8 py-4 rounded-full bg-foreground text-background font-medium shadow-card-soft"
         >
-          Get started — it's free
+          Book Free Analytics Audit
         </motion.button>
       </div>
     </motion.div>

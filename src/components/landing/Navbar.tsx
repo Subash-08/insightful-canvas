@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { BarChart3 } from "lucide-react";
+import { Activity } from "lucide-react";
 
-const links = ["Home", "Features", "Pricing", "About", "Comparison"];
+const links = ["Home", "Services", "Solutions", "About", "Contact"];
 
 export const Navbar = () => {
   return (
@@ -17,9 +17,9 @@ export const Navbar = () => {
             animate={{ rotate: 360 }}
             transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
           >
-            <BarChart3 className="h-5 w-5 text-foreground" />
+            <Activity className="h-5 w-5 text-foreground" />
           </motion.div>
-          <span className="font-display font-semibold text-lg tracking-tight">Pulsio</span>
+          <span className="font-display font-semibold text-lg tracking-tight">MarTechRise</span>
         </div>
         <nav className="hidden md:flex items-center gap-8">
           {links.map((l, i) => (
@@ -41,7 +41,7 @@ export const Navbar = () => {
             Sign in
           </button>
           <button className="inline-flex items-center px-4 py-2 text-sm rounded-full bg-foreground text-background hover:bg-foreground/90 transition-all hover:scale-[1.03]">
-            Get started
+            Book Audit
           </button>
         </div>
       </div>

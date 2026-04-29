@@ -14,14 +14,14 @@ const Counter = ({ to, suffix = "" }: { to: number; suffix?: string }) => {
 };
 
 const stats = [
-  { value: 300000, suffix: "+", label: "Active websites" },
-  { value: 12, suffix: "B+", label: "Events processed" },
-  { value: 99, suffix: "%", label: "Uptime guaranteed" },
-  { value: 1, suffix: "KB", label: "Tracking script" },
+  { value: 250, suffix: "+", label: "Brands served" },
+  { value: 100, suffix: "%", label: "Data validated" },
+  { value: 40, suffix: "%", label: "Avg. attribution lift" },
+  { value: 24, suffix: "/7", label: "Tracking monitoring" },
 ];
 
 export const Stats = () => (
-  <section className="relative py-32 px-6 bg-foreground text-background overflow-hidden">
+  <section className="relative py-24 px-6 bg-foreground text-background overflow-hidden">
     <motion.div
       animate={{ rotate: 360 }}
       transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
@@ -31,7 +31,7 @@ export const Stats = () => (
       <AnimatedText
         text="Numbers that matter."
         as="h2"
-        className="font-display font-bold text-5xl md:text-7xl text-background mb-20 text-center"
+        className="font-display font-bold text-4xl md:text-6xl text-background mb-16 text-center"
       />
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
         {stats.map((s, i) => (
