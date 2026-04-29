@@ -1,47 +1,65 @@
 import { motion } from "framer-motion";
-import { Activity, Shield, Globe2, Zap, LineChart, Eye } from "lucide-react";
+import {
+  AlertTriangle,
+  Database,
+  Eye,
+  Repeat,
+  Unplug,
+  Activity,
+  Compass,
+  GitCompare,
+  TrendingDown,
+} from "lucide-react";
 import { AnimatedText, FadeIn } from "@/components/anim/AnimatedText";
 
-const features = [
-  { icon: Activity, title: "Real-time visitors", desc: "See who's on your site, where they came from, and what they're reading — live." },
-  { icon: Shield, title: "Privacy first", desc: "No cookies. No personal data. Fully GDPR, CCPA, and PECR compliant by default." },
-  { icon: Globe2, title: "Geo insights", desc: "Beautiful country and region breakdowns powered by an offline IP database." },
-  { icon: Zap, title: "Lightning fast", desc: "A 1KB tracking script that loads asynchronously and never blocks your page." },
-  { icon: LineChart, title: "Conversion goals", desc: "Track signups, purchases, and custom events with a single line of code." },
-  { icon: Eye, title: "Session replay", desc: "Watch anonymized journeys and uncover the friction your funnel hides." },
+const issues = [
+  { icon: AlertTriangle, title: "Broken tracking implementation", desc: "Tags, pixels or events not firing as expected." },
+  { icon: Database, title: "Inaccurate or inconsistent data", desc: "Dirty, missing or conflicting data across platforms." },
+  { icon: Eye, title: "Poor visibility into the customer journey", desc: "Gaps in data make it hard to see the full picture." },
+  { icon: Repeat, title: "Missing / duplicate conversion tracking", desc: "Conversions under or over reported due to tracking errors." },
+  { icon: Unplug, title: "Disconnected marketing tools", desc: "Your tools don't talk to each other, creating data silos." },
+  { icon: Activity, title: "Meta Pixel & CAPI not firing correctly", desc: "Server and browser events not working as they should." },
+  { icon: Compass, title: "Incorrect attribution across channels", desc: "Wrong data = wrong decisions = wasted budget." },
+  { icon: GitCompare, title: "Data mismatches between tools", desc: "Numbers don't match across GA4, Ads Manager, CRM, etc." },
+  { icon: TrendingDown, title: "Broken funnels and journey tracking", desc: "Drop-offs, leaks and blind spots in your conversion funnel." },
 ];
 
 export const Features = () => {
   return (
-    <section id="features" className="relative py-32 px-6 bg-background">
+    <section id="solutions" className="relative py-24 px-6 bg-background">
       <div className="mx-auto max-w-6xl">
-        <div className="text-center mb-20">
+        <div className="text-center mb-14">
           <FadeIn>
             <span className="inline-block px-4 py-1.5 rounded-full bg-secondary text-xs uppercase tracking-widest text-foreground/70 mb-6">
-              Features
+              The Problem
             </span>
           </FadeIn>
           <AnimatedText
-            text="Everything you need."
+            text="Is your Marketing data"
             as="h2"
-            className="font-display font-bold text-5xl md:text-7xl text-foreground"
+            className="font-display font-bold text-4xl md:text-6xl text-foreground"
           />
           <AnimatedText
-            text="Nothing you don't."
+            text="actually reliable?"
             as="h2"
             delay={0.3}
-            className="font-display font-bold text-5xl md:text-7xl text-foreground/40 mt-1"
+            className="font-display font-bold text-4xl md:text-6xl text-foreground/40 mt-1"
           />
+          <FadeIn delay={0.5}>
+            <p className="mt-6 max-w-2xl mx-auto text-muted-foreground">
+              Many companies invest heavily in marketing but still struggle with foundational data issues.
+            </p>
+          </FadeIn>
         </div>
 
         <motion.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-15%" }}
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
         >
-          {features.map((f, i) => (
+          {issues.map((f, i) => (
             <motion.div
               key={i}
               variants={{
@@ -58,12 +76,25 @@ export const Features = () => {
                 <div className="w-11 h-11 rounded-xl bg-secondary flex items-center justify-center mb-5 group-hover:bg-foreground group-hover:text-background transition-colors duration-300">
                   <f.icon className="w-5 h-5" />
                 </div>
-                <h3 className="font-display text-xl font-semibold mb-2 text-foreground">{f.title}</h3>
+                <h3 className="font-display text-lg font-semibold mb-2 text-foreground">{f.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
               </div>
             </motion.div>
           ))}
         </motion.div>
+
+        <FadeIn delay={0.2}>
+          <div className="mt-16 text-center max-w-3xl mx-auto">
+            <p className="font-serif-display text-2xl md:text-3xl text-foreground leading-snug">
+              "Without reliable data, marketing decisions become guesswork."
+            </p>
+            <p className="mt-5 text-muted-foreground">
+              This leads to wasted ad spend, poor performance, and missed growth opportunities.
+              That's where <b className="text-foreground">MarTechRise</b> comes in. We fix your tracking,
+              eliminate data gaps, and build clean, reliable data pipelines.
+            </p>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

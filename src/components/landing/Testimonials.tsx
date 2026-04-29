@@ -2,20 +2,20 @@ import { motion } from "framer-motion";
 import { AnimatedText } from "@/components/anim/AnimatedText";
 
 const items = [
-  { quote: "We replaced Google Analytics on day one. Pulsio is faster, cleaner, and our visitors don't get a cookie banner anymore.", name: "Sarah Chen", role: "Founder, Lumen" },
-  { quote: "The real-time dashboard is addictive. I check it more than Twitter now — and I learn more from it.", name: "Marco Vidal", role: "Indie hacker" },
-  { quote: "Setup took 60 seconds. The script is so small it disappears into our budget. Beautiful product.", name: "Priya Anand", role: "Eng Lead, Northwind" },
-  { quote: "Finally analytics that look like they belong in 2026. Our marketing team actually opens the dashboard.", name: "Jonas Becker", role: "CMO, Halo" },
+  { quote: "MarTechRise found 12 broken events in our funnel within a week. Our attribution finally makes sense — and our ROAS jumped 38%.", name: "Sarah Chen", role: "Head of Growth, Lumen" },
+  { quote: "Server-side GTM and CAPI implementation was flawless. iOS conversions came back to life overnight.", name: "Marco Vidal", role: "Performance Lead, Northwind" },
+  { quote: "We went from arguing about which dashboard was right to one source of truth. Best MarTech investment we've made.", name: "Priya Anand", role: "Director of Marketing, Halo" },
+  { quote: "Their audit report was the clearest I've ever seen. Every issue prioritized, every fix scoped. Just execute.", name: "Jonas Becker", role: "CMO, Verda" },
 ];
 
 export const Testimonials = () => (
-  <section className="relative py-32 px-6 bg-secondary overflow-hidden">
+  <section className="relative py-24 px-6 bg-secondary overflow-hidden">
     <div className="mx-auto max-w-6xl">
-      <div className="text-center mb-16">
+      <div className="text-center mb-14">
         <AnimatedText
-          text="Loved by builders."
+          text="Trusted by data-driven teams."
           as="h2"
-          className="font-display font-bold text-5xl md:text-7xl text-foreground"
+          className="font-display font-bold text-4xl md:text-6xl text-foreground"
         />
       </div>
       <div className="grid md:grid-cols-2 gap-6">

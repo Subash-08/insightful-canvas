@@ -2,56 +2,74 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { AnimatedText, FadeIn } from "@/components/anim/AnimatedText";
 
-const plans = [
+const services = [
   {
-    name: "Hobby",
-    price: "$0",
-    desc: "For personal projects and side hustles.",
-    features: ["10K events / month", "1 website", "Real-time dashboard", "Email support"],
-    cta: "Start free",
+    name: "Analytics & Tracking",
+    desc: "Set up accurate, scalable tracking across your website and apps.",
+    features: ["Solution Design Document (SDD)", "GTM / Adobe Launch setup", "Web & Mobile SDK migration", "Third-party tags integration"],
+    cta: "Learn more",
     highlighted: false,
   },
   {
-    name: "Growth",
-    price: "$19",
-    desc: "For founders building something serious.",
-    features: ["1M events / month", "Unlimited sites", "Conversion goals", "Custom events", "Priority support"],
-    cta: "Start 14-day trial",
+    name: "Server-Side Tracking",
+    desc: "Eliminate data loss and improve tracking accuracy with modern architecture.",
+    features: ["Server-side GTM setup", "Meta Conversion API (CAPI)", "First-party data collection", "Privacy-safe tracking"],
+    cta: "Most requested",
     highlighted: true,
   },
   {
-    name: "Scale",
-    price: "$79",
-    desc: "For teams that need it all.",
-    features: ["10M events / month", "Team collaboration", "Session replay", "API access", "Dedicated support"],
-    cta: "Contact sales",
+    name: "CDP Implementation",
+    desc: "Unify and activate your customer data across platforms.",
+    features: ["Adobe RT-CDP & Tealium", "Audience segmentation", "Real-time data activation"],
+    cta: "Learn more",
+    highlighted: false,
+  },
+  {
+    name: "Analytics Audit",
+    desc: "Identify what's broken and where data is being lost.",
+    features: ["Missing conversion tracking", "Broken or misfiring tags", "Detailed audit report"],
+    cta: "Book audit",
+    highlighted: false,
+  },
+  {
+    name: "Data Validation",
+    desc: "Fix tracking issues and ensure your data is clean and reliable.",
+    features: ["Tracking & tag debugging", "Cross-platform validation", "Funnel validation"],
+    cta: "Learn more",
+    highlighted: false,
+  },
+  {
+    name: "Reporting & Insights",
+    desc: "Turn your data into clear, actionable business insights.",
+    features: ["Campaign performance", "Custom dashboards (GA4/Looker)", "ROI & attribution analysis"],
+    cta: "Learn more",
     highlighted: false,
   },
 ];
 
 export const Pricing = () => (
-  <section id="pricing" className="relative py-32 px-6 bg-background">
+  <section id="services" className="relative py-24 px-6 bg-background">
     <div className="mx-auto max-w-6xl">
-      <div className="text-center mb-20">
+      <div className="text-center mb-14">
         <FadeIn>
           <span className="inline-block px-4 py-1.5 rounded-full bg-secondary text-xs uppercase tracking-widest mb-6">
-            Pricing
+            Services
           </span>
         </FadeIn>
         <AnimatedText
-          text="Fair pricing. No surprises."
+          text="Our Analytics & MarTech Solutions"
           as="h2"
-          className="font-display font-bold text-5xl md:text-7xl text-foreground"
+          className="font-display font-bold text-4xl md:text-6xl text-foreground"
         />
       </div>
-      <div className="grid md:grid-cols-3 gap-6">
-        {plans.map((p, i) => (
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((p, i) => (
           <motion.div
             key={p.name}
             initial={{ opacity: 0, y: 50, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, margin: "-10%" }}
-            transition={{ delay: i * 0.15, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ delay: (i % 3) * 0.12, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             whileHover={{ y: -10 }}
             className={`relative p-8 rounded-3xl border ${
               p.highlighted
@@ -65,15 +83,11 @@ export const Pricing = () => (
               </span>
             )}
             <h3 className="font-display text-2xl font-semibold">{p.name}</h3>
-            <p className={`text-sm mt-2 ${p.highlighted ? "text-background/60" : "text-muted-foreground"}`}>{p.desc}</p>
-            <div className="my-8 font-display font-bold text-6xl">
-              {p.price}
-              <span className={`text-base font-normal ${p.highlighted ? "text-background/60" : "text-muted-foreground"}`}>/mo</span>
-            </div>
+            <p className={`text-sm mt-2 mb-6 ${p.highlighted ? "text-background/60" : "text-muted-foreground"}`}>{p.desc}</p>
             <ul className="space-y-3 mb-8">
               {p.features.map((f) => (
                 <li key={f} className="flex items-start gap-3 text-sm">
-                  <Check className={`w-4 h-4 mt-0.5 ${p.highlighted ? "text-[hsl(var(--brand-orange))]" : "text-foreground"}`} />
+                  <Check className={`w-4 h-4 mt-0.5 flex-shrink-0 ${p.highlighted ? "text-[hsl(var(--brand-orange))]" : "text-foreground"}`} />
                   <span>{f}</span>
                 </li>
               ))}

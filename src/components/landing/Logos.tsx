@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/anim/AnimatedText";
 
-const brands = ["LINEAR", "VERCEL", "STRIPE", "FRAMER", "NOTION", "FIGMA", "RAYCAST"];
+const brands = ["GA4", "GTM", "META CAPI", "ADOBE LAUNCH", "TEALIUM", "SEGMENT", "MIXPANEL", "LOOKER"];
 
 export const Logos = () => (
-  <section className="relative py-24 px-6 bg-background">
+  <section className="relative py-16 px-6 bg-background">
     <FadeIn>
-      <p className="text-center text-sm text-muted-foreground tracking-widest uppercase mb-10">
-        Trusted by ambitious teams worldwide
+      <p className="text-center text-sm text-muted-foreground tracking-widest uppercase mb-8">
+        Working across the modern marketing stack
       </p>
     </FadeIn>
     <div className="mx-auto max-w-6xl overflow-hidden">
