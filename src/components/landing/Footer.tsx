@@ -1,11 +1,31 @@
 import { motion } from "framer-motion";
 import { Linkedin, Instagram, Facebook, Twitter, Youtube, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { AnimatedText, FadeIn } from "@/components/anim/AnimatedText";
 
 const groups = [
-  { title: "Company", links: ["Home", "About", "Services", "Solutions", "Contact"] },
-  { title: "Solutions", links: ["Analytics Audit", "Server-Side Tracking", "CDP Implementation", "Data Validation", "Reporting"] },
-  { title: "Resources", links: ["Case Studies", "Blog", "Changelog", "Privacy", "Terms"] },
+  { title: "Company", links: [
+    { label: "Home", to: "/" },
+    { label: "About", to: "/about" },
+    { label: "Services", to: "/services" },
+    { label: "Case Studies", to: "/case-studies" },
+    { label: "Contact", to: "/contact" },
+  ]},
+  { title: "Services", links: [
+    { label: "Tracking Architecture", to: "/services/tracking-architecture" },
+    { label: "Analytics Implementation", to: "/services/analytics-implementation" },
+    { label: "Conversion & Event Tracking", to: "/services/conversion-event-tracking" },
+    { label: "Server-Side Tracking", to: "/services/server-side-tracking" },
+    { label: "QA & Data Validation", to: "/services/qa-data-validation" },
+    { label: "Analytics Reporting", to: "/services/analytics-reporting-attribution" },
+  ]},
+  { title: "Resources", links: [
+    { label: "Blog", to: "/resources/blog" },
+    { label: "Guides", to: "/resources/guides" },
+    { label: "Checklists", to: "/resources/checklists" },
+    { label: "Privacy", to: "/privacy-policy" },
+    { label: "Terms", to: "/terms" },
+  ]},
 ];
 
 const socials = [Linkedin, Instagram, Facebook, Twitter, Youtube];
@@ -59,14 +79,14 @@ export const Footer = () => (
               <h4 className="text-background/60 text-sm mb-4">{g.title}</h4>
               <ul className="space-y-3">
                 {g.links.map((l) => (
-                  <li key={l}>
-                    <a
-                      href="#"
+                  <li key={l.label}>
+                    <Link
+                      to={l.to}
                       className="group inline-flex items-center gap-1 text-background hover:text-background/70 transition-colors"
                     >
-                      {l}
+                      {l.label}
                       <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
