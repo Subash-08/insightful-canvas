@@ -2,6 +2,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
 import { Logos } from "@/components/landing/Logos";
 import { Features } from "@/components/landing/Features";
+import { ScrollStackCards } from "@/components/landing/ScrollStackCards";
 import { StickyShowcase } from "@/components/landing/StickyShowcase";
 import { Stats } from "@/components/landing/Stats";
 import { Pricing } from "@/components/landing/Pricing";
@@ -18,6 +19,7 @@ const Index = () => {
       <Hero />
       <Logos />
       <Features />
+      <ScrollStackCards />
       <StickyShowcase />
       <Stats />
       <Pricing />
