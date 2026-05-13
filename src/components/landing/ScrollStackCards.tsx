@@ -67,6 +67,15 @@ const Card = ({
   );
 };
 
+const ProgressBar = ({ i, total, progress }: { i: number; total: number; progress: MotionValue<number> }) => {
+  const scaleX = useTransform(progress, [i / total, (i + 1) / total], [0, 1]);
+  return (
+    <motion.div className="h-1.5 rounded-full bg-foreground/15 flex-1 max-w-[64px] overflow-hidden">
+      <motion.div className="h-full bg-foreground origin-left" style={{ scaleX }} />
+    </motion.div>
+  );
+};
+
 export const ScrollStackCards = () => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -105,21 +114,7 @@ export const ScrollStackCards = () => {
             <FadeIn delay={0.55}>
               <div className="mt-8 flex items-center gap-3 text-sm text-muted-foreground">
                 {cards.map((_, i) => (
-                  <motion.div
-                    key={i}
-                    className="h-1.5 rounded-full bg-foreground/15 flex-1 max-w-[64px] overflow-hidden"
-                  >
-                    <motion.div
-                      className="h-full bg-foreground origin-left"
-                      style={{
-                        scaleX: useTransform(
-                          scrollYProgress,
-                          [i / cards.length, (i + 1) / cards.length],
-                          [0, 1]
-                        ),
-                      }}
-                    />
-                  </motion.div>
+                  <ProgressBar key={i} i={i} total={cards.length} progress={scrollYProgress} />
                 ))}
               </div>
             </FadeIn>
